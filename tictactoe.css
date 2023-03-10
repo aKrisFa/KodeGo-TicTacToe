@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /*center horizontal*/
+    align-items: center;/*center vertical */
+    height: 100vh;/*to make align items work*/
+    flex-direction: column;/*to stack element vertically*/
+}
+
+#gameboard {
+    width: 300px;
+    height: 300px; /*to make it square*/
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;/*so the square wrap with each other*/
+}
+
+.square {
+    width: 100px;
+    height: 100px; /*to make it square*/
+    background-color: rgb(226, 223, 223);
+    border:  1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 90px;
+    height: 90px; /*to make it square*/
+    border-radius: 50%;
+    border: 15px solid rgb(58, 58, 250);
+    box-sizing: border-box;  
+}
+
+.cross {
+    width: 90px;
+    height: 90px; /*to make it square*/
+    position: relative; 
+    transform: rotate(45deg); /*to make it looks x */
+}
+
+.cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(250, 57, 57);
+}
+
+.cross:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.cross:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+}
